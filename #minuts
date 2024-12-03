@@ -1,0 +1,23 @@
+#SEGUNDOS.PY
+def convertir_a_horas_y_segundos(dias):
+    horas = dias * 24
+    segundos = dias * 24 * 60 * 60
+    return horas, segundos
+
+def main():
+    print("Conversor de Días a Horas y Segundos Totales")
+    
+    try:
+        dias = int(input("Introduce la cantidad de días: "))
+        
+        if dias < 0:
+            print("Por favor, introduce un número positivo.")
+        else:
+            horas, segundos = convertir_a_horas_y_segundos(dias)
+            print(f"En {dias} días hay {horas} horas.")
+            print(f"En {dias} días hay {segundos} segundos.")
+    except ValueError:
+        print("Por favor, introduce un valor numérico válido.")
+
+# Llamar a la función principal
+main()

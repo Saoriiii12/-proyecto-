@@ -1,0 +1,28 @@
+#primedio.py
+
+def calcular_promedio():
+    print("Calculadora de Promedio de Calificaciones")
+    
+    calificaciones = []
+    
+    while True:
+        entrada = input("Introduce una calificación y 'fin' para terminar: ")
+        if entrada.lower() == 'fin':
+            break
+        try:
+            calificacion = float(entrada)
+            if 0 <= calificacion <= 100:  # Validación de calificaciones entre 0 y 100
+                calificaciones.append(calificacion)
+            else:
+                print("Por favor, introduce un número entre 0 y 100.")
+        except ValueError:
+            print("Entrada inválida. Introduce un número o 'fin'.")
+    
+    if calificaciones:
+        promedio = sum(calificaciones) / len(calificaciones)
+        print(f"\nEl promedio de las calificaciones es: {promedio:.2f}")
+    else:
+        print("No se introdujeron calificaciones.")
+
+# Llamar a la función
+calcular_promedio()
